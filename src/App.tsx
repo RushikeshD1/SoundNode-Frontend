@@ -7,6 +7,7 @@ import Register from "./pages/Register"
 import Album from "./pages/Album"
 import PlayList from "./pages/PlayList"
 import Admin from "./pages/Admin"
+import Player from "./components/Player"
 
 const App = () => {
 
@@ -22,7 +23,8 @@ const App = () => {
           <Route path={"/admin/dashboard"}  element={isAuth ? <Admin/> : <Login/>}/>
           <Route path={"/login"} element={isAuth ? <Home/> : <Login/>} />
           <Route path={"/register"} element={isAuth ? <Home/> : <Register/>} />
-        </Routes>
+        </Routes> 
+        <Player />       
       </BrowserRouter>}
     </>
   )

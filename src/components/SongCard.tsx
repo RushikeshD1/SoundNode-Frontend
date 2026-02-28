@@ -22,12 +22,13 @@ const SongCard: React.FC<SongCardProps> = ({
   const saveToPlayListHandler = () => {
     addToPlayList(id);
   };
+  
   return (
     <div className="min-w-45 px-3 p-2 rounded cursor-pointer hover:bg-[#ffffff26]">
       <div className="relative group">
         <img
           src={image ? image : "/image.webp"}
-          className="mr-1 w-40 rounded"
+          className="mr-1 w-40 h-40 rounded"
           alt={name}
         />
         <div className="flex gap-2">

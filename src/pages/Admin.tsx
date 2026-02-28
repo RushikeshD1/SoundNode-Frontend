@@ -84,8 +84,11 @@ const Admin = () => {
         },
       );
 
+      console.log(data);
+
       toast.success(data.message);
       fetchSongs();
+      fetchAlbums();
       setBtnLoading(false);
 
       setTitle("");

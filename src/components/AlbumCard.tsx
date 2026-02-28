@@ -21,7 +21,7 @@ const AlbumCard: React.FC<AlbumCardProps> = ({
       className="min-w-45 px-3 p-2 rounded cursor-pointer hover:bg-[#ffffff26]"
       onClick={() => navigate("/album/" + id)}
     >
-      <img src={image} className="rounded w-40" alt="" />
+      <img src={image} className="rounded w-40 h-40" alt="" />
       <p className="font-bold mt-2 mb-1">{name.slice(0, 12)}...</p>
       <p className="text-slate-200 text-sm">{description.slice(0, 18)}...</p>
     </div>

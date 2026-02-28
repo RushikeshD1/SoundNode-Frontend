@@ -1,11 +1,18 @@
+import { useEffect } from "react";
 import AlbumCard from "../components/AlbumCard";
 import Layout from "../components/Layout";
 import Loading from "../components/Loading";
 import SongCard from "../components/SongCard";
 import { useSongData } from "../context/SongContext";
+import Player from "../components/Player";
 
 const Home = () => {
-  const { albums, songs, loading } = useSongData();
+  const { albums, songs, loading, fetchAlbums } = useSongData();
+
+  useEffect(() => {
+    fetchAlbums();
+  }, [])
+
   return (
     <div>
       {loading ? (
@@ -31,21 +38,22 @@ const Home = () => {
 
           <div className="mb-4">
             <h1 className="my-5 font-bold text-2xl">Today's biggest hits</h1>
-            <div className="flex overflow-auto ">
-              {songs?.map((ele, i) => {
-                return (
-                  <SongCard
-                    key={i}
-                    image={ele.thumbnail}
-                    name={ele.title}
-                    description={ele.description}
-                    id={ele.id}
-                  />
-                );
-              })}
+            <div className="flex overflow-auto">
+                {songs?.map((ele, i) => {
+                  return (
+                    <SongCard
+                      key={i}
+                      image={ele.thumbnail}
+                      name={ele.title}
+                      description={ele.description}
+                      id={ele.id}
+                    />
+                  );
+                })}
             </div>
           </div>
         </Layout>
+        
       )}
     </div>
   );

@@ -16,6 +16,7 @@ const Album = () => {
     loading,
   } = useSongData();
 
+
   const params = useParams<{ id: string }>();
 
   const {isAuth, addToPlayList} = useUserData()
@@ -35,7 +36,7 @@ const Album = () => {
             <Loading />
           ) : (
             <>
-              <div className="mt-10 flex gap-8 flex-column md:flex-row md:items-center">
+              <div className="mt-10 flex gap-8 flex-col md:flex-row md:items-center">
                 {albumData.thumbnail && (
                   <img
                     src={albumData.thumbnail}
@@ -49,7 +50,7 @@ const Album = () => {
                     <h2 className="text-3xl font-bold mb-4 md:text-5xl">{albumData.title} PlayList</h2>
                     <h4 className="">{albumData.description}</h4>
                     <p className="mt-1">
-                        <span className="font-bold text-green-600">SoundNode</span>
+                        <img src="/sou.png" className="w-10"/>
                     </p>
                 </div>
               </div>

@@ -9,7 +9,7 @@ import {
 } from "react";
 import Album from "../pages/Album";
 
-const server = "http://13.53.174.55:8000";
+const server = "http://localhost:8000";
 
 export interface Song {
   id: string;
@@ -136,7 +136,7 @@ export const SongProvider: React.FC<SongProviderProps> = ({ children }) => {
 
     try {
       const {data} = await axios.get<{songs: Song[]; album: Album}>(`${server}/api/v1/album/${id}`);
-
+      // console.log("album songdata", data);
       setAlbumData(data.album)
       setAlbumSong(data.songs)
     } catch (error) {
