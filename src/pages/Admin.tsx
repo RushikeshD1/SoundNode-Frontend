@@ -6,7 +6,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { MdDelete } from "react-icons/md";
 
-const server = "http://13.53.174.55:3000";
+const server = "http://13.60.51.13:3000";
 
 const Admin = () => {
   const { user } = useUserData();
