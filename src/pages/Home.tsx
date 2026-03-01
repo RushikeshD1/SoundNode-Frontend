@@ -4,7 +4,6 @@ import Layout from "../components/Layout";
 import Loading from "../components/Loading";
 import SongCard from "../components/SongCard";
 import { useSongData } from "../context/SongContext";
-import Player from "../components/Player";
 
 const Home = () => {
   const { albums, songs, loading, fetchAlbums } = useSongData();
